@@ -1,0 +1,17 @@
+{
+  "name": "backend",
+  "version": "0.0.1",
+  "description": "Tiket5",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DSC5",
+  "license": "ISC"
+}
