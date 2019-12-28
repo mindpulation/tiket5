@@ -1,7 +1,7 @@
 const dbs = require('mongodb').MongoClient;
 
-const schema = require('./schema');
-const Schema = new schema();
+const Schema = require('./Schema');
+const schm = new Schema();
 
 const tiket = require('./Tiket/Tiket');
 const Tiket = new tiket();
@@ -17,7 +17,7 @@ class Mongo{
      startDB(url){
         dbs.connect(url, {useNewUrlParser: true, useUnifiedTopology: true}, async (err, con) => {
              if (!err) {
-                 await Schema.createCol(err, con);
+                 await schm.createCol(err, con);
                  this.db = con.db('tiket5');
                  console.log(this.db);
                  this.tiket = this.db.collection('TiketHistory');
