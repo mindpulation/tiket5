@@ -18,8 +18,8 @@ export default function Index(){
 
     useEffect(()=>{
         (async()=>{                        
-            let prv = await AC.getProv();                        
-            setProv(prv.data.semuaprovinsi);
+            let prv = await AC.getProv();                           
+            setProv(prv.data.semuaprovinsi);            
         })();        
     },[AC]);
 
@@ -27,7 +27,7 @@ export default function Index(){
         (async()=>{            
             let cty = await AC.getKota(optionProv);
             console.log(cty);
-            (cty.data.kabupatens == null) ? setCity([]) : setCity(cty.data.kabupatens)            
+            (cty.data.kabupatens == null) ? setCity([]) :  setCity(cty.data.kabupatens)            
         })();
     },[optionProv, AC]);
 
@@ -47,6 +47,13 @@ export default function Index(){
         })();
     },[optionKec, AC]);
 
+    const cnslData = () => {
+        console.log(prov);
+        console.log(city);
+        console.log(kec);
+        console.log(desa);
+    }
+
     return(
         <div className="BodIndex">
             <div className="container">
@@ -55,78 +62,151 @@ export default function Index(){
                         <div className="row1">
                             
                             <p className="txt-title">
-                                Data Pribadi
+                                Selamat Datang!
                             </p>
                             
-                            <input type="number" />
+                            <div className="txt-group">
+                                <span className="txt-captions">No registrasi</span>
+                            </div>
+                            <div className="input-group">
+                                <input type="number" className="" />
+                            </div>
                             
-                            <input type="text"  className=""/>
+                            <div className="txt-group">
+                                <span className="txt-captions">Nama Lengkap</span>
+                            </div>
+                            <div className="input-group">
+                                <input type="text"  className=""/>
+                            </div>
                             
-                            <input type="text"  className=""/>
+                            <div className="txt-group">
+                                <span className="txt-captions">Nama Panggilan</span>
+                            </div>
+                            <div className="input-group">
+                                <input type="text"  className=""/>
+                            </div>
                             
-                            <select value={optionProv} onChange={(e)=>setOptionProv(e.target.value)}>
-                                <option value="">Provinsi</option>
-                                {
-                                    prov.map((res) =>
-                                        <option key={res.id} value={res.id}> {res.nama} </option>                                        
-                                    )
-                                }
-                            </select>
-
-                            <select value={optionCity} onChange={(e)=>setOptionCity(e.target.value)}>
-                                <option value="">Kota/Kabupaten</option>
-                                {
-                                    city.map((res)=>
-                                        <option key={res.id} value={res.id}> {res.nama} </option>
-                                    )
-                                }
-                            </select>
-
-                            <select value={optionKec} onChange={(e)=>setOptionKec(e.target.value)}>
-                                <option value="">Kecamatan</option>
-                                {
-                                    kec.map((res)=>
-                                        <option key={res.id} value={res.id}> {res.nama} </option>
-                                    )
-                                }
-                            </select>
-
-                            <select value={optionDesa} onChange={(e)=>setOptionDesa(e.target.value)}>
-                                <option value="">Desa</option>                                
-                                {
-                                    desa.map((res)=>
-                                        <option key={res.id} value={res.id}> {res.nama} </option>
-                                    )
-                                }
-                            </select>
-
-                            <input type="text"  className=""/>
-
-                            <select>
-                                <option> Kelas </option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                            </select>
-
-                            <select>
-                                <option> Jurusan </option>
-                                <option value="IPA">IPA</option>
-                                <option value="IPS">IPS</option>
-                                <option value="BAHASA">BAHASA</option>
-                            </select>
-
-                            <input type="number"  className=""/>
-
-                            <input type="email"  className=""/>
-
-                            <textarea  className="" cols="30" rows="10">
-
-                            </textarea>
+                            <div className="txt-group">
+                                <span className="txt-captions">Provinsi</span>
+                            </div>
+                            <div className="input-group">
+                                <select value={optionProv} onChange={(e)=>setOptionProv(e.target.value)}>
+                                    <option className="option">Choose..</option>
+                                    {
+                                        prov.map((res) =>
+                                            <option className="option" key={res.id} value={res.id}> {res.nama} </option>                                        
+                                        )
+                                    }
+                                </select>
+                            </div>
+                            
+                            <div className="txt-group">
+                                <span className="txt-captions">Kota atau Kabupaten</span>
+                            </div>
+                            <div className="input-group">
+                                <select value={optionCity} onChange={(e)=>setOptionCity(e.target.value)}>
+                                    <option className="option">Choose..</option>
+                                    {
+                                        city.map((res)=>
+                                            <option className="option" key={res.id} value={res.id}> {res.nama} </option>
+                                        )
+                                    }
+                                </select>
+                            </div>
+                            
+                            <div className="txt-group">
+                                <span className="txt-captions">Kecamatan</span>
+                            </div>
+                            <div className="input-group">
+                                <select value={optionKec} onChange={(e)=>setOptionKec(e.target.value)}>
+                                    <option className="option">Choose..</option>
+                                    {
+                                        kec.map((res)=>
+                                            <option className="option" key={res.id} value={res.id}> {res.nama} </option>
+                                        )
+                                    }
+                                </select>
+                            </div>
+                            
+                            <div className="txt-group">
+                                <span className="txt-captions">Kelurahan</span>
+                            </div>
+                            <div className="input-group">
+                                <select value={optionDesa} onChange={(e)=>setOptionDesa(e.target.value)}>
+                                    <option className="option">Choose..</option>
+                                    {
+                                        desa.map((res)=>
+                                            <option className="option" key={res.id} value={res.id}> {res.nama} </option>
+                                        )
+                                    }
+                                </select> 
+                            </div>
+                            
+                            <div className="btn-group">
+                                <button onClick={cnslData}>Click</button>                                                   
+                            </div>
 
                         </div>
                         <div className="row2">
                             
+                            <p className="txt-title">
+                                Selamat Datang!
+                            </p>
+                            
+                            <div className="txt-group">
+                                <span className="txt-captions">Asal Sekolah</span>
+                            </div>
+                            <div className="input-group">
+                                <input type="text"  className=""/>
+                            </div>
+                            
+                            <div className="txt-group">
+                                <span className="txt-captions">Kelas</span>
+                            </div>
+                            <div className="input-group">
+                                <select>
+                                    <option> Kelas </option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                            
+                            <div className="txt-group">
+                                <span className="txt-captions">Jurusan</span>
+                            </div>
+                            <div className="input-group">
+                                <select>
+                                    <option> Jurusan </option>
+                                    <option value="IPA">IPA</option>
+                                    <option value="IPS">IPS</option>
+                                    <option value="BAHASA">BAHASA</option>
+                                </select>
+                            </div>
+                            
+                            <div className="txt-group">
+                                <span className="txt-captions">No Handphone</span>
+                            </div>
+                            <div className="input-group">
+                                <input type="number"  className=""/>
+                            </div>
+                            
+                            <div className="txt-group">
+                                <span className="txt-captions">Email</span>
+                            </div>
+                            <div className="input-group">
+                                <input type="email"  className=""/>
+                            </div>
+                            
+                            <div className="txt-group">
+                                <span className="txt-captions">Kesan dan Pesan</span>
+                            </div>
+                            <div className="input-group">
+                                <textarea  className="" cols="30" rows="10">
+
+                                </textarea>
+                            </div>
+
                         </div>
                     </div>
                 </div>
