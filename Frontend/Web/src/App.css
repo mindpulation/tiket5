@@ -30,3 +30,202 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.BodIndex .container .box .group .row1 .txt-title{
+    font-size: 2em;
+    font-family: 'Quicksand', sans-serif;
+
+    padding-bottom: 15px;
+}
+
+.BodIndex .container .box .group .row1 .txt-group{
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+    width: 100%;
+
+    font-size: 0.9em;
+    font-family: 'Montserrat', sans-serif;
+
+    font-weight: bold;
+}
+
+.BodIndex .container .box .group .row1 .input-group{
+    width: 100%;
+    padding-right: 25px;
+}
+
+.BodIndex .container .box .group .row1 .input-group input{
+    padding: 12.5px;
+    padding-right: 0px;
+
+    width: 98.5%;
+
+    border: none;
+    border: 1px solid lightgray;
+
+    border-radius: 5px;
+
+    outline: none;
+}
+
+.BodIndex .container .box .group .row1 .input-group input:hover{
+    border: 1px solid rgba(79, 127, 182, 0.651);
+}
+
+.BodIndex .container .box .group .row1 .input-group input:focus{
+    border: 2px solid rgba(79, 127, 182, 0.616);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+.BodIndex .container .box .group .row1 .input-group select{
+    padding: 12px;
+
+    width: 100%;
+    
+    border: 1px solid lightgray;
+    border-radius: 5px;    
+
+    background-color: white;
+
+    color: black;
+
+    font-family:'Montserrat', sans-serif;
+
+    outline: none;    
+}
+
+.BodIndex .container .box .group .row1 .input-group select:hover{
+    border: 1px solid rgba(79, 127, 182, 0.651);
+    cursor: pointer;
+}
+.BodIndex .container .box .group .row1 .input-group select:focus{
+    border: 2px solid rgba(79, 127, 182, 0.651);
+}
+
+.BodIndex .container .box .group .row1 .input-group select .option{
+    color: dimgray;        
+}
+
+
+
+.BodIndex .container .box .group .row2{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.BodIndex .container .box .group .row2 .txt-title{
+    font-size: 2em;
+    font-family: 'Quicksand', sans-serif;
+
+    padding-bottom: 15px;
+}
+
+.BodIndex .container .box .group .row2 .txt-group{
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+    width: 100%;
+
+    font-size: 0.9em;
+    font-family: 'Montserrat', sans-serif;
+
+    font-weight: bold;
+}
+
+.BodIndex .container .box .group .row2 .input-group{
+    width: 100%;
+    padding-right: 25px;
+}
+
+.BodIndex .container .box .group .row2 .input-group input{
+    padding: 12.5px;
+    padding-right: 0px;
+
+    width: 98.5%;
+
+    border: none;
+    border: 1px solid lightgray;
+
+    border-radius: 5px;
+
+    outline: none;
+}
+
+.BodIndex .container .box .group .row2 .input-group input:hover{
+    border: 1px solid rgba(79, 127, 182, 0.651);
+}
+
+.BodIndex .container .box .group .row2 .input-group input:focus{
+    border: 2px solid rgba(79, 127, 182, 0.616);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+.BodIndex .container .box .group .row2 .input-group select{
+    padding: 12px;
+
+    width: 100%;
+    
+    border: 1px solid lightgray;
+    border-radius: 5px;    
+
+    background-color: white;
+
+    color: black;
+
+    font-family:'Montserrat', sans-serif;
+
+    outline: none;    
+}
+
+.BodIndex .container .box .group .row2 .input-group select:hover{
+    border: 1px solid rgba(79, 127, 182, 0.651);
+    cursor: pointer;
+}
+.BodIndex .container .box .group .row2 .input-group select:focus{
+    border: 2px solid rgba(79, 127, 182, 0.651);
+}
+
+.BodIndex .container .box .group .row2 .input-group select .option{
+    color: dimgray;        
+}
+
+.BodIndex .container .box .group .row2 .input-group textarea{
+    padding: 12.5px;
+    padding-right: 0px;
+
+    width: 98.5%;
+
+    border: none;
+    border: 1px solid lightgray;
+
+    border-radius: 5px;
+
+    outline: none;
+}
+
+.BodIndex .container .box .group .row2 .input-group textarea:hover{
+    border: 1px solid rgba(79, 127, 182, 0.616);
+}
+
+.BodIndex .container .box .group .row2 .input-group textarea:focus{
+    border: 2px solid rgba(79, 127, 182, 0.616);
+}
+
+
