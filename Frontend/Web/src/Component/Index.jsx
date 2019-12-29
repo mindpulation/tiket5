@@ -58,6 +58,14 @@ export default function Index(){
         })();
     },[optionKec, AC]);    
 
+    // const printTiket = (param) => {
+    //     let def = document.body.innerHTML;
+    //     let bod = document.getElementById(param).innerHTML;        
+    //     document.body.innerHTML = bod;
+    //     window.print();
+    //     document.body.innerHTML = def;
+    // }
+
     return(
         <div className="BodIndex">
             <div className="container">
@@ -68,7 +76,7 @@ export default function Index(){
                             <div className="txt-title">
                                 <span>Selamat Datang!</span>
                             </div>              
-                            <div className="group-print">
+                            <div className="group-print" id="group-print">
                                 <div className="txt-data">
                                     <span><b>Selamat Datang</b> di Edu Fair 2020 MGMP BK SMA KOTA BEKASI</span>
                                 </div>
@@ -77,8 +85,24 @@ export default function Index(){
                                 </div>    
                                 <div className="txt-data">
                                     <span>{`Nama : ${txtName} (${txtCallName})`}</span>
-                                </div> 
-                            </div>
+                                </div>                                                             
+                            </div>                                                        
+                        </div>
+                        <div className="group2">
+                            <div className="txt-title">
+                                <span>Selamat Datang!</span>
+                            </div>              
+                            <div className="group-print" id="group-print">
+                                <div className="txt-data">
+                                    <span><b>Selamat Datang</b> di Edu Fair 2020 MGMP BK SMA KOTA BEKASI</span>
+                                </div>
+                                <div className="txt-data">
+                                    <span>{`NO REG : ${txtRegis}`}</span>
+                                </div>    
+                                <div className="txt-data">
+                                    <span>{`Nama : ${txtName} (${txtCallName})`}</span>
+                                </div>                                                             
+                            </div>                                                        
                         </div>
                     </div>
                 </div>
@@ -233,7 +257,7 @@ export default function Index(){
                             </div>
                             
                             <div className="btn-group">
-                                <button className="btn-print">
+                                <button className="btn-print" onClick={()=>{window.print()}}>
                                     Save and Print
                                 </button>
                             </div>
