@@ -2,3 +2,27 @@
 #### Insert Tiket Doc
 
 - API Address Endpoint : http://localhost:3000/insert
+- API POST Parameter * :
+  {
+	"noreg": "noreg",
+    "full_name": "full_name",
+    "nick_name": "nick_name",
+    "address": "address",
+    "school": "school",
+    "class": "classes",
+    "vocation": "vocation",
+    "phone_number": "phone_number",
+    "email": "email",
+    "know_from": "know_from",
+    "feedback": "feedback"
+ }
+
+ * If Good Response :
+   {
+       "status": true
+   }
+   
+   and isn't :
+   {
+       "status": false
+   }

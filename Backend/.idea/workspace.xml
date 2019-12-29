@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22bde824-1f54-499d-add6-1b250a77e96b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Doc.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Doc.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +58,7 @@
       <updated>1577522656957</updated>
       <workItem from="1577522658166" duration="3754000" />
       <workItem from="1577526779875" duration="14043000" />
-      <workItem from="1577623480591" duration="1367000" />
+      <workItem from="1577623480591" duration="1533000" />
     </task>
     <task id="LOCAL-00001" summary="Web Server Setup">
       <created>1577526931150</created>
@@ -89,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577548636424</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed schema isn't function">
+      <created>1577639838845</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1577639838845</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +119,7 @@
     <MESSAGE value="Another Commit" />
     <MESSAGE value="Created Create TiketHistory Function" />
     <MESSAGE value="Created insertTiket Function but needed to fixing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created insertTiket Function but needed to fixing" />
+    <MESSAGE value="Fixed schema isn't function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed schema isn't function" />
   </component>
 </project>
