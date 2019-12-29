@@ -45,14 +45,7 @@ export default function Index(){
             console.log(des);
             (des.data.desas == null) ? setDesa([]) : setDesa(des.data.desas)            
         })();
-    },[optionKec, AC]);
-
-    const cnslData = () => {
-        console.log(prov);
-        console.log(city);
-        console.log(kec);
-        console.log(desa);
-    }
+    },[optionKec, AC]);    
 
     return(
         <div className="BodIndex">
@@ -140,11 +133,7 @@ export default function Index(){
                                         )
                                     }
                                 </select> 
-                            </div>
-                            
-                            <div className="btn-group">
-                                <button onClick={cnslData}>Click</button>                                                   
-                            </div>
+                            </div>                                                        
 
                         </div>
                         <div className="row2">
@@ -165,7 +154,7 @@ export default function Index(){
                             </div>
                             <div className="input-group">
                                 <select>
-                                    <option> Kelas </option>
+                                    <option> Choose.. </option>
                                     <option value="10">10</option>
                                     <option value="11">11</option>
                                     <option value="12">12</option>
@@ -177,7 +166,7 @@ export default function Index(){
                             </div>
                             <div className="input-group">
                                 <select>
-                                    <option> Jurusan </option>
+                                    <option> Choose.. </option>
                                     <option value="IPA">IPA</option>
                                     <option value="IPS">IPS</option>
                                     <option value="BAHASA">BAHASA</option>
