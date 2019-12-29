@@ -1,6 +1,52 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
-export default function Index(){
+import AlamatController from '../Controller/Alamat';
+
+export default function Index(){            
+
+    const [AC] = useState(new AlamatController());
+
+    const [prov, setProv] = useState([]);
+    const [city, setCity] = useState([]);
+    const [kec, setKec] = useState([]);
+    const [desa, setDesa] = useState([]);
+    
+    const [optionProv, setOptionProv] = useState(0); 
+    const [optionCity, setOptionCity] = useState(0); 
+    const [optionKec, setOptionKec] = useState(0); 
+    const [optionDesa, setOptionDesa] = useState(0); 
+
+    useEffect(()=>{
+        (async()=>{                        
+            let prv = await AC.getProv();                        
+            setProv(prv.data.semuaprovinsi);
+        })();        
+    },[AC]);
+
+    useEffect(()=>{
+        (async()=>{            
+            let cty = await AC.getKota(optionProv);
+            console.log(cty);
+            (cty.data.kabupatens == null) ? setCity([]) : setCity(cty.data.kabupatens)            
+        })();
+    },[optionProv, AC]);
+
+    useEffect(()=>{
+        (async()=>{            
+            let kec = await AC.getKec(optionCity);
+            console.log(kec);
+            (kec.data.kecamatans == null) ? setKec([]) : setKec(kec.data.kecamatans)            
+        })();
+    },[optionCity, AC]);
+
+    useEffect(()=>{
+        (async()=>{            
+            let des = await AC.getDes(optionKec);
+            console.log(des);
+            (des.data.desas == null) ? setDesa([]) : setDesa(des.data.desas)            
+        })();
+    },[optionKec, AC]);
+
     return(
         <div className="BodIndex">
             <div className="container">
@@ -14,27 +60,47 @@ export default function Index(){
                             
                             <input type="number" />
                             
-                            <input type="text" name="" id=""/>
+                            <input type="text"  className=""/>
                             
-                            <input type="text" name="" id=""/>
+                            <input type="text"  className=""/>
                             
-                            <select>
-                                <option value=""></option>
+                            <select value={optionProv} onChange={(e)=>setOptionProv(e.target.value)}>
+                                <option value="">Provinsi</option>
+                                {
+                                    prov.map((res) =>
+                                        <option key={res.id} value={res.id}> {res.nama} </option>                                        
+                                    )
+                                }
                             </select>
 
-                            <select>
-                                <option value=""></option>
+                            <select value={optionCity} onChange={(e)=>setOptionCity(e.target.value)}>
+                                <option value="">Kota/Kabupaten</option>
+                                {
+                                    city.map((res)=>
+                                        <option key={res.id} value={res.id}> {res.nama} </option>
+                                    )
+                                }
                             </select>
 
-                            <select>
-                                <option value=""></option>
+                            <select value={optionKec} onChange={(e)=>setOptionKec(e.target.value)}>
+                                <option value="">Kecamatan</option>
+                                {
+                                    kec.map((res)=>
+                                        <option key={res.id} value={res.id}> {res.nama} </option>
+                                    )
+                                }
                             </select>
 
-                            <select>
-                                <option value=""></option>
+                            <select value={optionDesa} onChange={(e)=>setOptionDesa(e.target.value)}>
+                                <option value="">Desa</option>                                
+                                {
+                                    desa.map((res)=>
+                                        <option key={res.id} value={res.id}> {res.nama} </option>
+                                    )
+                                }
                             </select>
 
-                            <input type="text" name="" id=""/>
+                            <input type="text"  className=""/>
 
                             <select>
                                 <option> Kelas </option>
@@ -50,12 +116,12 @@ export default function Index(){
                                 <option value="BAHASA">BAHASA</option>
                             </select>
 
-                            <input type="number" name="" id=""/>
+                            <input type="number"  className=""/>
 
-                            <input type="email" name="" id=""/>
+                            <input type="email"  className=""/>
 
-                            <textarea name="" id="" cols="30" rows="10">
-                                
+                            <textarea  className="" cols="30" rows="10">
+
                             </textarea>
 
                         </div>
