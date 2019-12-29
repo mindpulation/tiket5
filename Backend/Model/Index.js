@@ -18,7 +18,7 @@ class Mongo{
         dbs.connect(url, {useNewUrlParser: true, useUnifiedTopology: true}, async (err, con) => {
              if (!err) {
                  
-                Schema.createCol(con);
+                schm.createCol(con);
 
                 this.db = con.db('tiket5');
                 

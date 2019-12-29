@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22bde824-1f54-499d-add6-1b250a77e96b" name="Default Changelist" comment="" />
+    <list default="true" id="22bde824-1f54-499d-add6-1b250a77e96b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Doc.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Index.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +59,7 @@
       <updated>1577522656957</updated>
       <workItem from="1577522658166" duration="3754000" />
       <workItem from="1577526779875" duration="14043000" />
+      <workItem from="1577623480591" duration="1367000" />
     </task>
     <task id="LOCAL-00001" summary="Web Server Setup">
       <created>1577526931150</created>
