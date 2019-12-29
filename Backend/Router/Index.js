@@ -3,7 +3,7 @@ const app = express.Router();
 
 const bp = require("body-parser");
 const model = require('./../Model/Index');
-const mdl = new model();
+const mdl = new model("mongodb://127.0.0.1:27017/tiket5");
 
 
 app.use(bp.json());
@@ -36,9 +36,8 @@ app.post('/insert', (req, res) => {
         feedback: feedback
     };
 
+    res.send( { status : mdl.insertTiket(tiketParam)} );
 
-
-    res.send( { status : mdl.insertTiket(tiketParam) } );
 });
 
 module.exports = app;

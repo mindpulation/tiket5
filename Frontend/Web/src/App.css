@@ -1,0 +1,32 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* Style Index.jsx */
+
+.BodIndex{
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+}
+
+.BodIndex .container{
+    padding-left: 50px;    
+    padding-right: 50px;    
+}
+
+.BodIndex .container .box{
+    width: 100%;
+    height: auto;    
+}
+
+.BodIndex .container .box .group{
+    padding: 25px;
+}
+
+.BodIndex .container .box .group .row1{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

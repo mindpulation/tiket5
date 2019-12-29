@@ -7,22 +7,28 @@ const tiket = require('./Tiket/Tiket');
 const Tiket = new tiket();
 
 class Mongo{
-
-    constructor(){
-
+    
+    constructor(url){    
         this.db = "Database";
-        this.tiket = "Tiket";
+        this.tiket = "Collections";
+        this.startDB(url);
     }
 
      startDB(url){
         dbs.connect(url, {useNewUrlParser: true, useUnifiedTopology: true}, async (err, con) => {
              if (!err) {
-                 await schm.createCol(err, con);
-                 this.db = con.db('tiket5');
-                 console.log(this.db);
-                 this.tiket = this.db.collection('TiketHistory');
-                 console.log(this.tiket);
-                 console.log("DB Succesfuly running");
+                 
+                Schema.createCol(con);
+
+                this.db = con.db('tiket5');
+                
+                console.log(this.db);
+                
+                this.tiket = this.db.collection('TiketHistory');
+                
+                console.log(this.tiket+"Collections");
+                
+                console.log("DB Succesfuly running");
 
              } else {
                  console.log("DB Failed to Running");
