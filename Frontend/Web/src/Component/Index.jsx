@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
 
 import AlamatController from '../Controller/Alamat';
+import SaveController from '../Controller/Save';
 
 export default function Index(){            
 
     const [AC] = useState(new AlamatController());
+    const [SC] = useState(new SaveController());
     
     const [prov, setProv] = useState([]);
     const [city, setCity] = useState([]);
@@ -22,13 +24,31 @@ export default function Index(){
 
     const [txtSchool, seTxtSchool] = useState("");
     const [txtClass, seTxtClass] = useState(0);
-    const [txtJurusan, seTxtJurusan] = useState(0);
+    const [txtJurusan, seTxtJurusan] = useState("");
 
     const [txtHp, seTxtHp] = useState("");
     const [txtEmail, seTxtEmail] = useState("");
 
     const [txtMsg, seTxtMsg] = useState("");
 
+    const Data = 
+    {        
+        noreg: txtRegis,
+        full_name: txtName,
+        nick_name: txtCallName,
+
+        address: `Kelurahan ${desa}, Kecamatan ${kec}, Kota/Kab ${city}, Provinsi ${prov} Indonesia`,
+
+        school: txtSchool,
+        class: txtClass,
+        vocation: txtJurusan,        
+
+        phone_number: txtHp,
+        email: txtEmail,
+
+        know_from: "",
+        feedback: txtMsg 
+    }
 
     useEffect(()=>{
         (async()=>{                        
@@ -57,14 +77,47 @@ export default function Index(){
             (des.data.desas == null) ? setDesa([]) : setDesa(des.data.desas)            
         })();
     },[optionKec, AC]);    
+    
+    const convertOption = async () => {                    
 
-    // const printTiket = (param) => {
-    //     let def = document.body.innerHTML;
-    //     let bod = document.getElementById(param).innerHTML;        
-    //     document.body.innerHTML = bod;
-    //     window.print();
-    //     document.body.innerHTML = def;
-    // }
+        await prov.map((res)=>{                                    
+            if(res.id === optionProv){
+                setProv(res.nama);
+            }            
+        });
+
+        await city.map((res)=>{                                    
+            if(res.id === optionCity){
+                setCity(res.nama);
+            }            
+        });
+
+        await kec.map((res)=>{                                    
+            if(res.id === optionKec){
+                setKec(res.nama);
+            }            
+        });
+
+        await desa.map((res)=>{                                    
+            if(res.id === optionDesa){
+                setDesa(res.nama);
+            }            
+        });
+
+    }
+
+    const atClickSave = async () => {
+        
+        await convertOption();        
+
+        if(txtRegis !== "" && txtName !== "" && txtCallName !== "" && optionProv !== 0 && optionCity !== 0 && optionKec !== 0 && optionDesa !== 0 && txtSchool !== "" && txtClass !== 0 && txtJurusan !== "" && txtEmail !== "" && txtHp !== 0 && txtMsg !== ""){
+            console.log(Data);
+            let sta = await SC.saveTiket(Data);
+            (sta === true) ? window.print() : console.log("Error in api save");
+        }
+        else{alert("Mohon melengkapi data terlebih dahulu.");}
+
+    }
 
     return(
         <div className="BodIndex">
@@ -257,7 +310,7 @@ export default function Index(){
                             </div>
                             
                             <div className="btn-group">
-                                <button className="btn-print" onClick={()=>{window.print()}}>
+                                <button className="btn-print" onClick={()=>{atClickSave()}}>
                                     Save and Print
                                 </button>
                             </div>
