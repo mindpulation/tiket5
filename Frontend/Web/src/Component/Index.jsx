@@ -11,8 +11,8 @@ export default function Index(){
     const [prov, setProv] = useState([]);
     const [city, setCity] = useState([]);
     const [kec, setKec] = useState([]);
-    const [desa, setDesa] = useState([]);    
-
+    const [desa, setDesa] = useState([]);
+    
     const [txtRegis, seTxtRegis] = useState("");
     const [txtName, seTxtName] = useState("");    
     const [txtCallName, seTxtCallName] = useState("");
@@ -29,26 +29,7 @@ export default function Index(){
     const [txtHp, seTxtHp] = useState("");
     const [txtEmail, seTxtEmail] = useState("");
 
-    const [txtMsg, seTxtMsg] = useState("");
-
-    const Data = 
-    {        
-        noreg: txtRegis,
-        full_name: txtName,
-        nick_name: txtCallName,
-
-        address: `Kelurahan ${desa}, Kecamatan ${kec}, Kota/Kab ${city}, Provinsi ${prov} Indonesia`,
-
-        school: txtSchool,
-        class: txtClass,
-        vocation: txtJurusan,        
-
-        phone_number: txtHp,
-        email: txtEmail,
-
-        know_from: "",
-        feedback: txtMsg 
-    }
+    const [txtMsg, seTxtMsg] = useState("");    
 
     useEffect(()=>{
         (async()=>{                        
@@ -78,44 +59,78 @@ export default function Index(){
         })();
     },[optionKec, AC]);    
     
-    const convertOption = async () => {                    
+    const convertOption = () => {                            
 
-        await prov.map((res)=>{                                    
-            if(res.id === optionProv){
-                setProv(res.nama);
-            }            
-        });
+        let lenProv = prov.length;
+        let lenCity = city.length; 
+        let lenKec = kec.length;
+        let lenDes = desa.length;
 
-        await city.map((res)=>{                                    
-            if(res.id === optionCity){
-                setCity(res.nama);
-            }            
-        });
+        let provinsi = "";
+        let kota = "";
+        let kecamatan = "";
+        let village = "";
 
-        await kec.map((res)=>{                                    
-            if(res.id === optionKec){
-                setKec(res.nama);
-            }            
-        });
+        let i = 0;
+        while(i<lenProv){
 
-        await desa.map((res)=>{                                    
-            if(res.id === optionDesa){
-                setDesa(res.nama);
-            }            
-        });
+            if(prov[i].id === optionProv){
+                provinsi = prov[i].nama;
+                break;
+            }
+
+            i++;
+        }
+
+        let j = 0;
+        while(j<lenCity){
+
+            if(city[j].id === optionCity){
+                kota = city[j].nama;
+                break;
+            }
+
+            j++;
+        }
+
+        let h = 0;
+        while(h<lenKec){
+
+            if(kec[h].id === optionKec){
+                kecamatan = kec[h].nama;
+                break;
+            }
+
+            h++;
+        }
+
+        let z = 0;
+        while(z<lenDes){
+
+            if(desa[z].id === optionDesa){
+                village = desa[z].nama;
+                break;
+            }
+
+            z++;
+        }
+
+        return `Kelurahan ${village}, Kecamatan ${kecamatan}, Kota/Kabupaten ${kota}, Provinsi ${provinsi}`;
 
     }
 
     const atClickSave = async () => {
         
-        await convertOption();        
+        let alamat = convertOption();
+        const Data = {noreg: txtRegis,full_name: txtName,nick_name: txtCallName,address: alamat ,school: txtSchool,class: txtClass,vocation: txtJurusan,phone_number: txtHp,email: txtEmail,know_from: "",feedback: txtMsg }        
 
         if(txtRegis !== "" && txtName !== "" && txtCallName !== "" && optionProv !== 0 && optionCity !== 0 && optionKec !== 0 && optionDesa !== 0 && txtSchool !== "" && txtClass !== 0 && txtJurusan !== "" && txtEmail !== "" && txtHp !== 0 && txtMsg !== ""){
             console.log(Data);
-            let sta = await SC.saveTiket(Data);
-            (sta === true) ? window.print() : console.log("Error in api save");
+            let sta = await SC.saveTiket(Data);            
+            (sta.data.status === true) ? window.print() : console.log("Error in api save");
         }
         else{alert("Mohon melengkapi data terlebih dahulu.");}
+
 
     }
 

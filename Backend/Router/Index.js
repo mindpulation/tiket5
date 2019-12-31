@@ -2,11 +2,14 @@ const express = require('express');
 const app = express.Router();
 
 const bp = require("body-parser");
+const cors = require("cors");
+
 const model = require('./../Model/Index');
 const mdl = new model("mongodb://127.0.0.1:27017/tiket5");
 
 
 app.use(bp.json());
+app.use(cors())
 
 app.post('/insert', (req, res) => {
 
