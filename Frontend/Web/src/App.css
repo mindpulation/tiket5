@@ -287,6 +287,10 @@ input[type=number] {
     border-radius: 5px;
 
     outline: none;
+
+    font-family: 'Montserrat', sans-serif;
+
+    line-height: 22.5px;
 }
 
 .BodIndex .container .col2 .box .group .row2 .input-group textarea:hover{
