@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="328ba0af-86ff-4e42-9734-3dcfcbf097f4" name="Default Changelist" comment="" />
+    <list default="true" id="328ba0af-86ff-4e42-9734-3dcfcbf097f4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Web/src/Controller/Save.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Web/src/Controller/Save.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +23,8 @@
   <component name="ProjectId" id="1VbXBKAP1K1xJGTmgHu4n8aFJ0Q" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -44,6 +49,7 @@
       <option name="presentableId" value="Default" />
       <updated>1577522631360</updated>
       <workItem from="1577522632768" duration="25000" />
+      <workItem from="1577806484140" duration="70000" />
     </task>
     <servers />
   </component>
@@ -55,7 +61,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
