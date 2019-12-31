@@ -1,0 +1,11 @@
+@media screen and (max-width:650px){
+    .BodIndex .container .col1, .BodIndex .container .col2{
+        width: 100%;
+    }
+    .BodIndex .container .col1 .box .group{
+        padding-right:0px;    
+    }
+    .BodIndex .container .col2 .box .group{
+        padding-left:0px;    
+    }
+}
