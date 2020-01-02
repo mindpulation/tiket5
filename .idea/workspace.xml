@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="328ba0af-86ff-4e42-9734-3dcfcbf097f4" name="Default Changelist" comment="" />
+    <list default="true" id="328ba0af-86ff-4e42-9734-3dcfcbf097f4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Model/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Model/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Model/Tiket/Tiket.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Model/Tiket/Tiket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Router/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Router/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/package-lock.json" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +25,8 @@
   <component name="ProjectId" id="1VbXBKAP1K1xJGTmgHu4n8aFJ0Q" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../32-06000.ts" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -44,7 +51,17 @@
       <option name="presentableId" value="Default" />
       <updated>1577522631360</updated>
       <workItem from="1577522632768" duration="25000" />
+      <workItem from="1577806484140" duration="2714000" />
+      <workItem from="1577887105695" duration="3675000" />
     </task>
+    <task id="LOCAL-00001" summary="Change Endpoint PORT">
+      <created>1577806584262</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577806584262</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -55,10 +72,16 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Change Endpoint PORT" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Endpoint PORT" />
   </component>
 </project>

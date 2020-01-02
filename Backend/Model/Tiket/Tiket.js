@@ -19,6 +19,22 @@ class Tiket {
 
     }
 
+    async getAllTiket(tiketCol){
+
+        let resultGetAllTiket;
+
+        let findAllTiket = await tiketCol.find().toArray();
+        console.log(findAllTiket);
+        if(findAllTiket ? resultGetAllTiket = { result : findAllTiket } : resultGetAllTiket = { result : false });
+
+        return resultGetAllTiket;
+    }
+
+    async findSpecificTiket(tiketCol){
+
+
+
+    }
 }
 
 module.exports = Tiket;
