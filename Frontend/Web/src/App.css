@@ -17,28 +17,97 @@
     padding-right: 50px;    
 }
 
-.BodIndex .container .box{
+.BodIndex .container .col1{    
+    width:30%;
+    float: left;
+}
+
+.BodIndex .container .col1 .box{
+    width: 100%;
+    padding-top: 35px;
+}
+
+.BodIndex .container .col1 .box .group{
+    padding-right:50px;    
+}
+
+.BodIndex .container .col1 .box .group2{
+    display: none;
+}
+
+.BodIndex .container .col1 .box .group .txt-title{
+    font-size: 2em;
+    font-family: 'Quicksand', sans-serif;
+
+    font-weight: bold;
+}
+
+.BodIndex .container .col1 .box .group .txt-data, .BodIndex .container .col1 .box .group2 .txt-data{
+    padding-top: 25px;
+    padding-bottom: 0px;
+
+    font-size: 0.8em;
+
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+.BodIndex .container .col2{
+    width: 70%;
+    float: left;
+}
+
+.BodIndex .container .col2 .box{
     width: 100%;
     height: auto;    
 }
 
-.BodIndex .container .box .group{
+.BodIndex .container .col2 .box .group{
     padding: 25px;
 }
 
-.BodIndex .container .box .group .row1{
+.BodIndex .container .col2 .box .group .btn-group{
+    padding-top: 15px;
+    padding-bottom: 100px;
+}
+
+.BodIndex .container .col2 .box .group .btn-group .btn-print{
+    padding: 15px;
+    
+    border: none;
+    border-radius: 5px;
+
+    background-color: rgba(59, 159, 226, 0.787);
+
+    color: white;
+    font-weight: bold;
+
+    font-family: 'Montserrat', sans-serif;
+
+    cursor: pointer;
+
+    float: right;
+
+    outline: none;
+}
+
+.BodIndex .container .col2 .box .group .btn-group .btn-print:hover{
+    background-color: rgba(59, 159, 226, 0.678);
+}
+
+.BodIndex .container .col2 .box .group .row1{
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.BodIndex .container .box .group .row1 .txt-title{
+.BodIndex .container .col2 .box .group .row1 .txt-title{
     font-size: 2em;
     font-family: 'Quicksand', sans-serif;
 
     padding-bottom: 15px;
 }
 
-.BodIndex .container .box .group .row1 .txt-group{
+.BodIndex .container .col2 .box .group .row1 .txt-group{
     padding-top: 15px;
     padding-bottom: 10px;
 
@@ -50,12 +119,12 @@
     font-weight: bold;
 }
 
-.BodIndex .container .box .group .row1 .input-group{
+.BodIndex .container .col2 .box .group .row1 .input-group{
     width: 100%;
     padding-right: 25px;
 }
 
-.BodIndex .container .box .group .row1 .input-group input{
+.BodIndex .container .col2 .box .group .row1 .input-group input{
     padding: 12.5px;
     padding-right: 0px;
 
@@ -69,11 +138,11 @@
     outline: none;
 }
 
-.BodIndex .container .box .group .row1 .input-group input:hover{
+.BodIndex .container .col2 .box .group .row1 .input-group input:hover{
     border: 1px solid rgba(79, 127, 182, 0.651);
 }
 
-.BodIndex .container .box .group .row1 .input-group input:focus{
+.BodIndex .container .col2 .box .group .row1 .input-group input:focus{
     border: 2px solid rgba(79, 127, 182, 0.616);
 }
 
@@ -86,7 +155,7 @@ input[type=number] {
   -moz-appearance:textfield;
 }
 
-.BodIndex .container .box .group .row1 .input-group select{
+.BodIndex .container .col2 .box .group .row1 .input-group select{
     padding: 12px;
 
     width: 100%;
@@ -103,33 +172,33 @@ input[type=number] {
     outline: none;    
 }
 
-.BodIndex .container .box .group .row1 .input-group select:hover{
+.BodIndex .container .col2 .box .group .row1 .input-group select:hover{
     border: 1px solid rgba(79, 127, 182, 0.651);
     cursor: pointer;
 }
-.BodIndex .container .box .group .row1 .input-group select:focus{
+.BodIndex .container .col2 .box .group .row1 .input-group select:focus{
     border: 2px solid rgba(79, 127, 182, 0.651);
 }
 
-.BodIndex .container .box .group .row1 .input-group select .option{
+.BodIndex .container .col2 .box .group .row1 .input-group select .option{
     color: dimgray;        
 }
 
 
 
-.BodIndex .container .box .group .row2{
-    padding-top: 10px;
+.BodIndex .container .col2 .box .group .row2{
+    padding-top: 50px;
     padding-bottom: 10px;
 }
 
-.BodIndex .container .box .group .row2 .txt-title{
+.BodIndex .container .col2 .box .group .row2 .txt-title{
     font-size: 2em;
     font-family: 'Quicksand', sans-serif;
 
     padding-bottom: 15px;
 }
 
-.BodIndex .container .box .group .row2 .txt-group{
+.BodIndex .container .col2 .box .group .row2 .txt-group{
     padding-top: 15px;
     padding-bottom: 10px;
 
@@ -141,12 +210,12 @@ input[type=number] {
     font-weight: bold;
 }
 
-.BodIndex .container .box .group .row2 .input-group{
+.BodIndex .container .col2 .box .group .row2 .input-group{
     width: 100%;
     padding-right: 25px;
 }
 
-.BodIndex .container .box .group .row2 .input-group input{
+.BodIndex .container .col2 .box .group .row2 .input-group input{
     padding: 12.5px;
     padding-right: 0px;
 
@@ -160,11 +229,11 @@ input[type=number] {
     outline: none;
 }
 
-.BodIndex .container .box .group .row2 .input-group input:hover{
+.BodIndex .container .col2 .box .group .row2 .input-group input:hover{
     border: 1px solid rgba(79, 127, 182, 0.651);
 }
 
-.BodIndex .container .box .group .row2 .input-group input:focus{
+.BodIndex .container .col2 .box .group .row2 .input-group input:focus{
     border: 2px solid rgba(79, 127, 182, 0.616);
 }
 
@@ -177,7 +246,7 @@ input[type=number] {
   -moz-appearance:textfield;
 }
 
-.BodIndex .container .box .group .row2 .input-group select{
+.BodIndex .container .col2 .box .group .row2 .input-group select{
     padding: 12px;
 
     width: 100%;
@@ -194,19 +263,19 @@ input[type=number] {
     outline: none;    
 }
 
-.BodIndex .container .box .group .row2 .input-group select:hover{
+.BodIndex .container .col2 .box .group .row2 .input-group select:hover{
     border: 1px solid rgba(79, 127, 182, 0.651);
     cursor: pointer;
 }
-.BodIndex .container .box .group .row2 .input-group select:focus{
+.BodIndex .container .col2 .box .group .row2 .input-group select:focus{
     border: 2px solid rgba(79, 127, 182, 0.651);
 }
 
-.BodIndex .container .box .group .row2 .input-group select .option{
+.BodIndex .container .col2 .box .group .row2 .input-group select .option{
     color: dimgray;        
 }
 
-.BodIndex .container .box .group .row2 .input-group textarea{
+.BodIndex .container .col2 .box .group .row2 .input-group textarea{
     padding: 12.5px;
     padding-right: 0px;
 
@@ -218,14 +287,16 @@ input[type=number] {
     border-radius: 5px;
 
     outline: none;
+
+    font-family: 'Montserrat', sans-serif;
+
+    line-height: 22.5px;
 }
 
-.BodIndex .container .box .group .row2 .input-group textarea:hover{
+.BodIndex .container .col2 .box .group .row2 .input-group textarea:hover{
     border: 1px solid rgba(79, 127, 182, 0.616);
 }
 
-.BodIndex .container .box .group .row2 .input-group textarea:focus{
+.BodIndex .container .col2 .box .group .row2 .input-group textarea:focus{
     border: 2px solid rgba(79, 127, 182, 0.616);
 }
-
-

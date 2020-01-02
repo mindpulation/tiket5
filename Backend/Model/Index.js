@@ -41,6 +41,15 @@ class Mongo{
         console.log(this.tiket);
         return Tiket.insertTiket(this.tiket ,paramTiket);
     }
+
+    //Get
+    getAllTiket(){
+        return Tiket.getAllTiket(this.tiket);
+    }
+
+    findSpecificTiket(){
+        return Tiket.findSpecifiTiket(this.tiket);
+    }
 }
 
 module.exports = Mongo;
