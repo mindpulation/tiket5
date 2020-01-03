@@ -25,15 +25,13 @@ const getAPI = async () => {
 
 io.on('connection', (soc)=>{
 
-    console.log('new user connected');
+    console.log('(+) New user connected');
         
     io.on('getAll', async ()=>{
         await getAPI();        
     });
 
-    
-
-    soc.on('disconnect', ()=>{ console.log("disconnected") });
+    soc.on('disconnect', ()=>{ console.log('(-) One user disconnect') });
 });
 
 server.listen(2020, async (err) => {

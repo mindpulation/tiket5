@@ -20,18 +20,14 @@ class Mongo{
                  
                 schm.createCol(con);
 
-                this.db = con.db('tiket5');
+                this.db = con.db('tiket5');                            
                 
-                console.log(this.db);
+                this.tiket = this.db.collection('TiketHistory');                            
                 
-                this.tiket = this.db.collection('TiketHistory');
-                
-                console.log(this.tiket+"Collections");
-                
-                console.log("DB Succesfuly running");
+                console.log("(+) Database running");
 
              } else {
-                 console.log("DB Failed to Running");
+                 console.log("(-) Database can't running");
              }
          });
     }

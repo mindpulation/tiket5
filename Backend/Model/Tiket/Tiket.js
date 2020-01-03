@@ -2,18 +2,11 @@ class Tiket {
 
     insertTiket(tiketCol ,paramTiket){
 
-        let checkInsertTiket, statusInsertTiket = "";
+        let checkInsertTiket, statusInsertTiket = "";        
 
-        console.log(paramTiket);
+        checkInsertTiket =  tiketCol.insertOne(paramTiket);                
 
-        checkInsertTiket =  tiketCol.insertOne(paramTiket);
-
-        console.log(checkInsertTiket);
-        //checkInsertTiket = await tiketCol.inse(paramTiket);
-
-        if(checkInsertTiket ? statusInsertTiket = true : statusInsertTiket = false);
-
-        console.log(statusInsertTiket);
+        if(checkInsertTiket ? statusInsertTiket = true : statusInsertTiket = false);        
 
         return statusInsertTiket;
 
@@ -24,7 +17,7 @@ class Tiket {
         let resultGetAllTiket;
 
         let findAllTiket = await tiketCol.find().toArray();
-        console.log(findAllTiket);
+                
         if(findAllTiket ? resultGetAllTiket = { result : findAllTiket } : resultGetAllTiket = { result : false });
 
         return resultGetAllTiket;

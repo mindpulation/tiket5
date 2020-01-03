@@ -1,7 +1,7 @@
 
 ############ Insert Tiket Doc
 
-- API Address Endpoint : http://localhost:3000/insert
+- API Address Endpoint : http://localhost:2020/insert
 - API POST Parameter * :
   {
 	"noreg": "noreg",
