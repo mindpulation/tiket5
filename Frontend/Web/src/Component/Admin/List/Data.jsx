@@ -1,23 +1,23 @@
 import React, { useState, useEffect, useContext } from 'react';
 
-import {PrintList} from '../../../Global/Store';
+import {PrintList, DataList} from '../../../Global/Store';
 
-export default function DataTable({param}){
+export default function DataTable(){
     
     const [ListPrint,setListPrint] = useContext(PrintList);
+    const [ListData] = useContext(DataList);
 
     let tempList = [];
     let sercList = [];        
-
-    const [temp, setTemp] = useState([]);
+    
     const [txtSearch, seTxtSearch] = useState("");
     const [primaryList, setPrimaryList] = useState([]);
 
-    tempList = param;
+    tempList = ListData;
 
-    useEffect(()=>{
-        setPrimaryList(param);        
-    },[setPrimaryList, param]);
+    useEffect(()=>{                    
+        setPrimaryList(ListData);                
+    },[ListData, setPrimaryList]);    
 
     const atEnter = (e) => {
         if(e.key === 'Enter'){
@@ -72,7 +72,8 @@ export default function DataTable({param}){
                 <div className="row2">
                     <div className="col">
                         
-                        <div className="list">   
+                        <div className="list">  
+                         
                             {
                                 primaryList.map((res, id)=>
 
@@ -92,6 +93,7 @@ export default function DataTable({param}){
 
                                 )
                             }                     
+
                         </div>
 
                     </div>

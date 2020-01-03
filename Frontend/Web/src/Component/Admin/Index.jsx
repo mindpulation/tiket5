@@ -7,7 +7,11 @@ import IndexPrint from './Print/Index';
 import GetController from '../../Controller/Get';
 import {DataList} from '../../Global/Store';
 
+import io from 'socket.io-client';
+
 export default function IndexAdmin(){
+
+    const endpoint = "http://localhost:2020/";    
 
     const [,setListData] = useContext(DataList);
 
@@ -20,13 +24,18 @@ export default function IndexAdmin(){
         })();
     },[GC, setListData]);
 
+    useEffect(()=>{        
+        const socket = io(endpoint);        
+        socket.on("sendAll", res => {setListData(res.result)});                
+    },[setListData]);        
+
     return(
         <div className="BodAdmin">
             <div className="col1">
-                <View/>
+                <View/>                            
             </div>
             <div className="col2">
-                <IndexList/>
+                <IndexList/>                
             </div>
             <div className="col3">
                 <IndexPrint/>
