@@ -33,8 +33,7 @@ class Mongo{
     }
 
     //Insert
-    insertTiket(paramTiket){
-        console.log(this.tiket);
+    insertTiket(paramTiket){        
         return Tiket.insertTiket(this.tiket ,paramTiket);
     }
 

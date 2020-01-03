@@ -26,7 +26,7 @@ export default function IndexAdmin(){
 
     useEffect(()=>{        
         const socket = io(endpoint);        
-        socket.on("sendAll", res => {setListData(res.result)});                
+        socket.on("sendAll", res => {console.log(res.result); setListData(res.result)});                
     },[setListData]);        
 
     return(

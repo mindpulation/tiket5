@@ -3,11 +3,13 @@ import React, {useState, useEffect} from 'react';
 import AlamatController from '../Controller/Alamat';
 import SaveController from '../Controller/Save';
 
+import swal from 'sweetalert';
 import io from 'socket.io-client';
+
 
 export default function Index(){            
 
-    const endpoint = "http://localhost:2020/";    
+    const endpoint = "http://localhost:2020/";        
 
     const [AC] = useState(new AlamatController());
     const [SC] = useState(new SaveController());
@@ -123,19 +125,19 @@ export default function Index(){
 
     }
 
-    const atClickSave = async () => {
-        
+    const atClickSave = async () => {        
+
         let alamat = convertOption();
         const Data = {noreg: txtRegis,full_name: txtName,nick_name: txtCallName,address: alamat ,school: txtSchool,class: txtClass,vocation: txtJurusan,phone_number: txtHp,email: txtEmail,know_from: "",feedback: txtMsg }        
 
-        if(txtRegis !== "" && txtName !== "" && txtCallName !== "" && optionProv !== 0 && optionCity !== 0 && optionKec !== 0 && optionDesa !== 0 && txtSchool !== "" && txtClass !== 0 && txtJurusan !== "" && txtEmail !== "" && txtHp !== 0 && txtMsg !== ""){
-            console.log(Data);   
-            const socket = io(endpoint);         
+        if(txtRegis !== "" && txtName !== "" && txtCallName !== "" && optionProv !== 0 && optionCity !== 0 && optionKec !== 0 && optionDesa !== 0 && txtSchool !== "" && txtClass !== 0 && txtJurusan !== "" && txtEmail !== "" && txtHp !== 0 && txtMsg !== ""){                                 
+            const socket = io(endpoint);
             let sta = await SC.saveTiket(Data);                        
             (sta.data.status === true) ? console.log("Success Input") : console.log("Error in api save");
-            socket.emit('getAll');
+            socket.emit('getAll');            
+            swal("Great joobs!", "Your registration success to save.", "success");            
         }
-        else{alert("Mohon melengkapi data terlebih dahulu.");}
+        else{swal("Oopps!", "Complete before gooo..", "error")}
 
 
     }
@@ -332,7 +334,7 @@ export default function Index(){
                             
                             <div className="btn-group">
                                 <button className="btn-print" onClick={()=>{atClickSave()}}>
-                                    Save and Print
+                                    Save for regis
                                 </button>
                             </div>
 

@@ -25,9 +25,10 @@ const getAPI = async () => {
 
 io.on('connection', (soc)=>{
 
-    console.log('(+) New user connected');
-        
-    io.on('getAll', async ()=>{
+    console.log('(+) New user connected');    
+
+    soc.on('getAll', async ()=>{
+        console.log('Hello');
         await getAPI();        
     });
 
