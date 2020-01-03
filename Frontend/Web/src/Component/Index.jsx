@@ -127,7 +127,7 @@ export default function Index(){
         if(txtRegis !== "" && txtName !== "" && txtCallName !== "" && optionProv !== 0 && optionCity !== 0 && optionKec !== 0 && optionDesa !== 0 && txtSchool !== "" && txtClass !== 0 && txtJurusan !== "" && txtEmail !== "" && txtHp !== 0 && txtMsg !== ""){
             console.log(Data);
             let sta = await SC.saveTiket(Data);            
-            (sta.data.status === true) ? window.print() : console.log("Error in api save");
+            (sta.data.status === true) ? console.log("Success Input") : console.log("Error in api save");
         }
         else{alert("Mohon melengkapi data terlebih dahulu.");}
 
