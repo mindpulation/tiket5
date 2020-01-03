@@ -300,3 +300,48 @@ input[type=number] {
 .BodIndex .container .col2 .box .group .row2 .input-group textarea:focus{
     border: 2px solid rgba(79, 127, 182, 0.616);
 }
+
+/* style IndexAdmin.jsx */
+
+.BodAdmin{
+    width: 100%;
+    padding: 25px;
+}
+
+.BodAdmin .col1{
+    width: 30%;
+    float: left;
+}
+
+.BodAdmin .col2{
+    width: 40%;
+    float: left;
+}
+
+.BodAdmin .col3{
+    width: 30%;
+    float: left;
+}
+
+/* style View.jsx */
+
+.BodView{
+    padding: 10px;   
+    padding-top: 0px;
+}
+
+.BodView .box .row{
+    display: flex;
+    flex-wrap: wrap;    
+    padding-bottom: 25px;
+}
+
+.BodView .box .row .col{
+    width: 50%;
+}
+
+.BodView .box .row .col .group2{
+    display: none;
+}
+
+
