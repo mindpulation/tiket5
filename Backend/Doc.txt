@@ -1,4 +1,22 @@
 
+############ Get all Tiket Doc
+
+- API Address Endpoint : http://localhost:2020/get_all/
+- API POST Parameter * :
+  {}
+
+ * If Good Response :
+   {
+       "result": [Data]
+   }
+
+   and isn't :
+   {
+       "status": false
+   }
+
+##################################
+
 ############ Insert Tiket Doc
 
 - API Address Endpoint : http://localhost:2020/insert
