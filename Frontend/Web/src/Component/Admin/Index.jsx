@@ -2,6 +2,7 @@ import React, {useEffect, useState, useContext} from 'react'
 
 import View from './View';
 import IndexList from './List/Index';
+import IndexPrint from './Print/Index';
 
 import GetController from '../../Controller/Get';
 import {DataList} from '../../Global/Store';
@@ -28,7 +29,7 @@ export default function IndexAdmin(){
                 <IndexList/>
             </div>
             <div className="col3">
-
+                <IndexPrint/>
             </div>
         </div>
     );

@@ -5,7 +5,7 @@ import EmptyList from './Empty';
 
 import {DataList} from '../../../Global/Store';
 
-export default function IndexList(){
+export default function IndexList(){    
 
     const [ListData] = useContext(DataList);
 

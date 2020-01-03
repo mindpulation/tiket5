@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+
+import {PrintList} from '../../../Global/Store';
 
 export default function DataTable({param}){
     
+    const [ListPrint,setListPrint] = useContext(PrintList);
+
     let tempList = [];
-    let sercList = [];    
+    let sercList = [];        
 
-    let tempPrint = [];
-
+    const [temp, setTemp] = useState([]);
     const [txtSearch, seTxtSearch] = useState("");
     const [primaryList, setPrimaryList] = useState([]);
 
@@ -33,19 +36,19 @@ export default function DataTable({param}){
 
     const atChoose = (param) => {        
         let found = 0;
-        if(tempPrint.length === 0){
-            tempPrint.push(param);
+        if(ListPrint.length === 0){
+            setListPrint(ListPrint => [...ListPrint, param]);
         }    
         else{
-            tempPrint.forEach((res)=>{                    
+            ListPrint.forEach((res)=>{                    
                 if(param.noreg.search(res.noreg) >= 0){
                     found++;                                
                 }
             });
             if(found === 0){
-                tempPrint.push(param);
+                setListPrint(ListPrint => [...ListPrint, param]);         
             }
-        }        
+        }                
     }
 
     return(
