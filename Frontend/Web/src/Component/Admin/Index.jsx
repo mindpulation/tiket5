@@ -1,10 +1,23 @@
-import React from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 
 import View from './View';
+import IndexList from './List/Index';
+
+import GetController from '../../Controller/Get';
+import {DataList} from '../../Global/Store';
 
 export default function IndexAdmin(){
 
-    
+    const [,setListData] = useContext(DataList);
+
+    const [GC] = useState(new GetController());
+
+    useEffect(()=>{
+        (async()=>{
+            let res = await GC.getData();            
+            setListData(res.data.result);
+        })();
+    },[GC, setListData]);
 
     return(
         <div className="BodAdmin">
@@ -12,7 +25,7 @@ export default function IndexAdmin(){
                 <View/>
             </div>
             <div className="col2">
-
+                <IndexList/>
             </div>
             <div className="col3">
 
