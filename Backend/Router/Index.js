@@ -1,3 +1,4 @@
+
 const express = require('express');
 const app = express.Router();
 
@@ -36,7 +37,8 @@ app.post('/insert', (req, res) => {
         phone_number: phone_number,
         email: email,
         know_from: know_from,
-        feedback: feedback
+        feedback: feedback,
+        status : true
     };
 
     res.send( { status : mdl.insertTiket(tiketParam)} );
@@ -53,5 +55,5 @@ app.post('get_specific', async (req,res) => {
 
     res.send( await mdl.findSpecificTiket(keyword) );
 
-})
+});
 module.exports = app;

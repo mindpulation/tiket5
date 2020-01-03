@@ -4,6 +4,9 @@ const bp = require('body-parser');
 const Admin = require('./Router/Index');
 const app = new Express();
 
+const Realtime = require('./Model/Realtime/Index');
+const rl = new Realtime(app);
+
 app.use(Express.static(__dirname));
 app.use('/', Admin);
 app.use(bp.json());
