@@ -49,7 +49,7 @@ app.get('/get_all', async (req,res) => {
    res.send( await mdl.getAllTiket());
 });
 
-app.post('get_specific', async (req,res) => {
+app.post('/get_specific', async (req,res) => {
 
     let keyword = req.body.keyword;
 
