@@ -59,11 +59,7 @@ export default function DataTable(){
                     <div className="col">
                         <div className="input">
                             
-                            <input type="search" value={txtSearch}  onChange={(e)=>{seTxtSearch(e.target.value)}} onKeyDown={atEnter} />                            
-
-                            <div className="btn">
-                                <button onClick={atSearch}>Search</button>
-                            </div>
+                            <input type="search" placeholder="Search by no-reg" value={txtSearch}  onChange={(e)=>{seTxtSearch(e.target.value)}} onKeyDown={atEnter} />                                                        
 
                         </div>
                     </div>

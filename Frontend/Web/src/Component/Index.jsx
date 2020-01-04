@@ -9,7 +9,7 @@ import io from 'socket.io-client';
 
 export default function Index(){            
 
-    const endpoint = "http://localhost:2020/";        
+    const endpoint = "http://192.168.8.102:2020/";        
 
     const [AC] = useState(new AlamatController());
     const [SC] = useState(new SaveController());

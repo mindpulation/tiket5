@@ -11,7 +11,7 @@ import io from 'socket.io-client';
 
 export default function IndexAdmin(){
 
-    const endpoint = "http://localhost:2020/";    
+    const endpoint = "http://192.168.8.102:2020/";    
 
     const [,setListData] = useContext(DataList);
 
@@ -26,7 +26,7 @@ export default function IndexAdmin(){
 
     useEffect(()=>{        
         const socket = io(endpoint);        
-        socket.on("sendAll", res => {console.log(res.result); setListData(res.result)});                
+        socket.on("sendAll", res => {setListData(res.result)});                
     },[setListData]);        
 
     return(

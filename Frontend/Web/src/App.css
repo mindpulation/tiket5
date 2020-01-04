@@ -343,4 +343,51 @@ input[type=number] {
     display: none;
 }
 
+.BodView .box .row .col .group .txt-title{
+    font-size: 2em;
+    font-family: 'Quicksand', sans-serif;
+
+    padding-bottom: 15px;   
+}
+
+.BodView .box .row .col .group .group-print .txt-data{
+    padding-top: 20px;
+    padding-bottom: 0px;
+
+    font-size: 0.8em;
+
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Style DataTable.jsx */
+
+.BodData{
+    padding: 25px;
+}
+
+.BodData .container .row1{
+    padding-bottom: 25px;    
+}
+
+.BodData .container .row1 .col .input{
+    width: 100%;
+    float: left;
+
+    padding-bottom: 25px;
+}
+
+.BodData .container .row1 .col .input input{
+    padding: 12.5px;    
+
+    width: 95%;
+
+    border: none;
+    border: 1px solid lightgray;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    font-family:'Montserrat', sans-serif;
+}
 

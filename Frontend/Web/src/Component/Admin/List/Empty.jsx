@@ -10,11 +10,7 @@ export default function EmptyList(){
                         <div className="input">
                             
                             <input type="search" />                            
-
-                            <div className="btn">
-                                <button >Search</button>
-                            </div>
-
+                            
                         </div>
                     </div>
                 </div>
