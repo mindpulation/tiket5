@@ -11,7 +11,7 @@ import io from 'socket.io-client';
 
 export default function IndexAdmin(){
 
-    const endpoint = "http://192.168.8.102:2020/";    
+    const endpoint = "http://88.99.38.137:2020/";    
 
     const [,setListData] = useContext(DataList);
 
