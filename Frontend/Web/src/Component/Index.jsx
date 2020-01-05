@@ -170,14 +170,15 @@ export default function Index(){
         let alamat = convertOption();
         const Data = {noreg: txtRegis,full_name: txtName,nick_name: txtCallName,address: alamat ,school: txtSchool,class: txtClass,vocation: txtJurusan,phone_number: txtHp,email: txtEmail,know_from: "",feedback: txtMsg }        
 
-        if(txtRegis !== "" && txtName !== "" && txtCallName !== "" && optionProv !== 0 && optionCity !== 0 && optionKec !== 0 && optionDesa !== 0 && txtSchool !== "" && txtClass !== 0 && txtJurusan !== "" && txtEmail !== "" && txtHp !== 0 && txtMsg !== ""){                                 
+        if(txtRegis !== "" && txtName !== "" && txtCallName !== "" && optionProv !== 0 && optionCity !== 0 && optionKec !== 0 && optionDesa !== 0 && txtSchool !== "" && txtClass !== 0 && txtJurusan !== 0 && txtEmail !== "" && txtHp !== 0 && txtMsg !== ""){                                 
             const socket = io(endpoint);
             let sta = await SC.saveTiket(Data);                        
             (sta.data.status === true) ? console.log("Success Input") : console.log("Error in api save");
-            swal("Great joobs!", "Your registration success to save.", "success");            
-            clearAll();
+            window.print();
+            swal("Great joobs!", "Your registration success to save.", "success");                        
             socket.emit('getAll');            
             socket.emit('getCount');
+            clearAll();
         }
         else{swal("Oopps!", "Complete before gooo..", "error")}
 
