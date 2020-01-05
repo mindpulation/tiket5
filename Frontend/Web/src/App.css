@@ -359,7 +359,7 @@ input[type=number] {
     font-family: 'Quicksand', sans-serif;
 }
 
-/* Style DataTable.jsx */
+/* Style DataTable.jsx & Style Empty Data*/
 
 .BodData{
     padding: 25px;
@@ -379,7 +379,7 @@ input[type=number] {
 .BodData .container .row1 .col .input input{
     padding: 12.5px;    
 
-    width: 95%;
+    width: 100%;
 
     border: none;
     border: 1px solid lightgray;
@@ -391,3 +391,165 @@ input[type=number] {
     font-family:'Montserrat', sans-serif;
 }
 
+.BodData .container .row1 .col .input input:hover{
+    border: 1px solid rgba(79, 127, 182, 0.651);
+}
+
+.BodData .container .row1 .col .input input:focus{
+    border: 2px solid rgba(79, 127, 182, 0.616);
+}
+
+.BodData .container .row2{
+    padding-bottom: 25px;
+}
+
+.BodData .container .row2 .col .list .box{
+    width: 100%;
+    float: left;
+
+    border: 1px solid lightgray;
+    border-radius: 5px;
+
+    margin-bottom: 10px;
+}
+
+.BodData .container .row2 .col .list .box .group{
+    /* padding-top: 15px; */
+    padding-bottom: 15px;
+}
+
+.BodData .container .row2 .col .list .box .group .txt-title{
+    font-size: 1.25em;
+    font-family:'Montserrat', sans-serif;
+
+    padding: 10px;    
+
+    background-color: rgb(243, 243, 243);
+}
+
+.BodData .container .row2 .col .list .box .group .txt-data{
+    font-size: 0.8em;
+    font-family:'Montserrat', sans-serif;      
+
+    padding: 10px;
+    padding-bottom: 1.5px;        
+}
+
+.BodData .container .row2 .col .list .box .group .btn{
+    padding: 15px;    
+    padding-left: 12px;
+
+    float: right;
+}
+
+.BodData .container .row2 .col .list .box .group .btn i{
+    padding-right: 7px;
+}
+
+.BodData .container .row2 .col .list .box .group .btn button{
+    padding: 7px;
+    
+    border: none;
+    border-radius: 5px;
+
+    background-color: rgba(59, 159, 226, 0.787);
+
+    color: white;
+    font-weight: bold;
+
+    font-size: 0.75em;
+
+    font-family: 'Montserrat', sans-serif;
+
+    cursor: pointer;
+
+    float: right;
+
+    outline: none;
+}   
+
+.BodData .container .row2 .col .list .box .group .btn button:hover{
+    background-color: rgba(59, 159, 226, 0.678);
+}
+
+/* Style EmptyPrint.jsx */
+
+.BodEmptyPrint{
+    padding: 25px;
+}
+
+/* Style BodPrint.jsx */
+
+.BodPrint{
+    padding: 25px;
+}
+
+.BodPrint .container{
+    width: 100%;
+    float: left;
+}
+
+.BodPrint .container .row{
+    padding-bottom: 25px;
+}
+
+.BodPrint .container .row .box{
+    background-color: rgb(243, 243, 243);
+
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 15px;
+
+    border-radius: 5px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+
+    margin-bottom: 10px;
+}
+
+.BodPrint .container .row .box .group{
+    display: inline;
+}
+
+.BodPrint .container .row .box .group button{
+    float: right;
+
+    background-color: transparent;
+
+    border: none;    
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.BodPrint .container .btnPrint{
+    float: right;
+}
+
+.BodPrint .container .btnPrint i{
+    padding-right: 7px;
+}
+
+.BodPrint .container .btnPrint button{
+    padding: 7px;
+    
+    border: none;
+    border-radius: 5px;
+
+    background-color: rgba(59, 159, 226, 0.787);
+
+    color: white;
+    font-weight: bold;
+
+    font-size: 0.75em;
+
+    font-family: 'Montserrat', sans-serif;
+
+    cursor: pointer;
+
+    float: right;
+
+    outline: none;   
+}
