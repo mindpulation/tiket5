@@ -11,7 +11,7 @@ export default function DataPrint(){
     }
 
     const atClick = () => {
-        console.log(ListPrint);
+        window.print();
     }
 
     return(

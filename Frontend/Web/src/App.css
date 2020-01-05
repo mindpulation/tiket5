@@ -326,20 +326,20 @@ input[type=number] {
 /* style View.jsx */
 
 .BodView{
-    padding: 25px;   
+    padding: 25px;  
+    overflow: auto; 
 }
 
 .BodView .box .row{
     display: flex;
-    flex-wrap: wrap;    
-    padding-bottom: 25px;
+    flex-wrap: wrap;        
 }
 
 /* .BodView .box .row .col{
     width: 50%;
 } */
 
-.BodView .box .row .col .group2{
+.BodView .box .row .col .group2, .BodView .box .row .col .group{
     display: none;
 }
 
@@ -350,7 +350,37 @@ input[type=number] {
     padding-bottom: 15px;   
 }
 
-.BodView .box .row .col .group .group-print .txt-data{
+.BodView .box .row .col .group .group-print .txt-data, .BodView .box .row .col .group2 .group-print .txt-data{
+    padding-top: 20px;
+    padding-bottom: 0px;
+
+    font-size: 0.8em;
+
+    font-family: 'Quicksand', sans-serif;
+}
+
+.BodView .box .row2{
+    display: flex;
+    flex-wrap: wrap;    
+    padding-bottom: 25px;
+}
+
+/* .BodView .box .row .col{
+    width: 50%;
+} */
+
+.BodView .box .row2 .col .group2, .BodView .box .row .col .group{
+    display: none;
+}
+
+.BodView .box .row2 .col .group .txt-title{
+    font-size: 2em;
+    font-family: 'Quicksand', sans-serif;
+
+    padding-bottom: 15px;   
+}
+
+.BodView .box .row2 .col .group .group-print .txt-data, .BodView .box .row .col .group2 .group-print .txt-data{
     padding-top: 20px;
     padding-bottom: 0px;
 
@@ -363,6 +393,7 @@ input[type=number] {
 
 .BodData{
     padding: 25px;
+    overflow-y: auto;
 }
 
 .BodData .container .row1{
