@@ -14,31 +14,26 @@ class Mongo{
         this.startDB(url);
     }
 
-     startDB(url){
+    startDB(url){
         dbs.connect(url, {useNewUrlParser: true, useUnifiedTopology: true}, async (err, con) => {
              if (!err) {
                  
                 schm.createCol(con);
 
-                this.db = con.db('tiket5');
+                this.db = con.db('tiket5');                            
                 
-                console.log(this.db);
+                this.tiket = this.db.collection('TiketHistory');                            
                 
-                this.tiket = this.db.collection('TiketHistory');
-                
-                console.log(this.tiket+"Collections");
-                
-                console.log("DB Succesfuly running");
+                console.log("(+) Database running");
 
              } else {
-                 console.log("DB Failed to Running");
+                 console.log("(-) Database can't running");
              }
          });
     }
 
     //Insert
-    insertTiket(paramTiket){
-        console.log(this.tiket);
+    insertTiket(paramTiket){        
         return Tiket.insertTiket(this.tiket ,paramTiket);
     }
 
@@ -47,9 +42,10 @@ class Mongo{
         return Tiket.getAllTiket(this.tiket);
     }
 
-    findSpecificTiket(){
-        return Tiket.findSpecifiTiket(this.tiket);
+    countTiket(){        
+        return Tiket.countAllTiket(this.tiket);
     }
+   
 }
 
 module.exports = Mongo;

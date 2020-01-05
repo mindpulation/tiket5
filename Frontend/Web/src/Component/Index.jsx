@@ -3,7 +3,13 @@ import React, {useState, useEffect} from 'react';
 import AlamatController from '../Controller/Alamat';
 import SaveController from '../Controller/Save';
 
+import swal from 'sweetalert';
+import io from 'socket.io-client';
+
+
 export default function Index(){            
+
+    const endpoint = "http://192.168.8.102:2020/";        
 
     const [AC] = useState(new AlamatController());
     const [SC] = useState(new SaveController());
@@ -24,12 +30,52 @@ export default function Index(){
 
     const [txtSchool, seTxtSchool] = useState("");
     const [txtClass, seTxtClass] = useState(0);
-    const [txtJurusan, seTxtJurusan] = useState("");
+    const [txtJurusan, seTxtJurusan] = useState(0);
 
     const [txtHp, seTxtHp] = useState("");
     const [txtEmail, seTxtEmail] = useState("");
 
-    const [txtMsg, seTxtMsg] = useState("");    
+    const [txtMsg, seTxtMsg] = useState("");            
+
+    const clearAll = () => {
+        seTxtName('');
+        seTxtCallName('');
+        setOptionProv(0);
+        setOptionKec(0);
+        setOptionCity(0)
+        setOptionDesa(0);
+        seTxtSchool('');
+        seTxtClass(0);
+        seTxtJurusan(0);
+        seTxtHp("");
+        seTxtEmail("");
+        seTxtMsg("");
+    }
+
+    useEffect(()=>{        
+        const socket = io(endpoint);        
+        socket.emit("getCount");
+        socket.on("sendCount", res => {            
+
+            console.log(res);
+
+            const init = "EDUFAIR";
+            const y = "20";
+            const today = new Date();
+
+            const d = String(today.getDate()).padStart(2, '0')                    
+
+            let strCount = "" + (res+1);
+            let digit = "0000";
+
+            let hasilCount = digit.substring(0, digit.length - strCount.length) + strCount;
+
+            let hasil = `${init}-${y}-${d}-${hasilCount}`;            
+
+            seTxtRegis(hasil);
+
+        });                
+    },[seTxtRegis]);   
 
     useEffect(()=>{
         (async()=>{                        
@@ -119,17 +165,21 @@ export default function Index(){
 
     }
 
-    const atClickSave = async () => {
-        
+    const atClickSave = async () => {        
+
         let alamat = convertOption();
         const Data = {noreg: txtRegis,full_name: txtName,nick_name: txtCallName,address: alamat ,school: txtSchool,class: txtClass,vocation: txtJurusan,phone_number: txtHp,email: txtEmail,know_from: "",feedback: txtMsg }        
 
-        if(txtRegis !== "" && txtName !== "" && txtCallName !== "" && optionProv !== 0 && optionCity !== 0 && optionKec !== 0 && optionDesa !== 0 && txtSchool !== "" && txtClass !== 0 && txtJurusan !== "" && txtEmail !== "" && txtHp !== 0 && txtMsg !== ""){
-            console.log(Data);
-            let sta = await SC.saveTiket(Data);            
-            (sta.data.status === true) ? window.print() : console.log("Error in api save");
+        if(txtRegis !== "" && txtName !== "" && txtCallName !== "" && optionProv !== 0 && optionCity !== 0 && optionKec !== 0 && optionDesa !== 0 && txtSchool !== "" && txtClass !== 0 && txtJurusan !== "" && txtEmail !== "" && txtHp !== 0 && txtMsg !== ""){                                 
+            const socket = io(endpoint);
+            let sta = await SC.saveTiket(Data);                        
+            (sta.data.status === true) ? console.log("Success Input") : console.log("Error in api save");
+            swal("Great joobs!", "Your registration success to save.", "success");            
+            clearAll();
+            socket.emit('getAll');            
+            socket.emit('getCount');
         }
-        else{alert("Mohon melengkapi data terlebih dahulu.");}
+        else{swal("Oopps!", "Complete before gooo..", "error")}
 
 
     }
@@ -187,8 +237,8 @@ export default function Index(){
                                 <div className="txt-group">
                                     <span className="txt-captions">No registrasi</span>
                                 </div>
-                                <div className="input-group">
-                                    <input type="number" className="" value={txtRegis} onChange={(e)=>seTxtRegis(e.target.value)} />
+                                <div className="input-group">                                    
+                                    <input type="text" className="" value={txtRegis} readOnly/>
                                 </div>
                                 
                                 <div className="txt-group">
@@ -326,7 +376,7 @@ export default function Index(){
                             
                             <div className="btn-group">
                                 <button className="btn-print" onClick={()=>{atClickSave()}}>
-                                    Save and Print
+                                    Save for regis
                                 </button>
                             </div>
 

@@ -1,39 +1,41 @@
 /* Style at Print */
 
 @media print{    
-    .BodIndex .container .col1{
-        width: 50%;
+    .BodAdmin .col1{
+        width: 100%;
         float: left;
     }
-    .BodIndex .container .col2{
+    .BodAdmin .col2{
+        display: none;
+    }    
+    .BodAdmin .col3{
+        display: none;    
+    }
+    .BodView .box .row2{
         display: none;
     }
-    .BodIndex .container .col1 .box .group .txt-title{
-        display: none;
+    .BodView .box .row{
+        padding-bottom: 25px;
     }
-    .BodIndex .container .col1 .box .group .txt-data{
-        padding-top: 5px;        
+    .BodView .box .row .col{
+        width: 50%;
     }
-    .BodIndex .container .col1 .box .group{
-        padding: 15px;
-        border-radius: 5px;
-        border: 2px dashed dimgray;
-
-        margin-bottom: 15px;
-    }
-    .BodIndex .container .col1 .box .group2{
+    .BodView .box .row .col .group2, .BodView .box .row .col .group{
         display: block;
     }
-    .BodIndex .container .col1 .box .group2 .txt-title{
+    .BodView .box .row .col .group .txt-title, .BodView .box .row .col .group2 .txt-title{
         display: none;
+    }    
+    .BodView .box .row .col .group, .BodView .box .row .col .group2{        
+        padding: 10px;
     }
-    .BodIndex .container .col1 .box .group2 .txt-data{
-        padding-top: 5px;        
-    }
-    .BodIndex .container .col1 .box .group2{
-        padding: 15px;
+    .BodView .box .row .col .group .join, .BodView .box .row .col .group2 .join{
+        border: 1.5px dashed dimgray;
         border-radius: 5px;
-        border: 2px dashed dimgray;
+    }
+    .BodView .box .row .col .group .join .group-print, .BodView .box .row .col .group2 .join .group-print{
+        padding: 20px;
+        padding-top: 0px;
     }
 }
 
