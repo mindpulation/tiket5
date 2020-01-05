@@ -30,12 +30,27 @@ export default function Index(){
 
     const [txtSchool, seTxtSchool] = useState("");
     const [txtClass, seTxtClass] = useState(0);
-    const [txtJurusan, seTxtJurusan] = useState("");
+    const [txtJurusan, seTxtJurusan] = useState(0);
 
     const [txtHp, seTxtHp] = useState("");
     const [txtEmail, seTxtEmail] = useState("");
 
     const [txtMsg, seTxtMsg] = useState("");            
+
+    const clearAll = () => {
+        seTxtName('');
+        seTxtCallName('');
+        setOptionProv(0);
+        setOptionKec(0);
+        setOptionCity(0)
+        setOptionDesa(0);
+        seTxtSchool('');
+        seTxtClass(0);
+        seTxtJurusan(0);
+        seTxtHp("");
+        seTxtEmail("");
+        seTxtMsg("");
+    }
 
     useEffect(()=>{        
         const socket = io(endpoint);        
@@ -46,9 +61,9 @@ export default function Index(){
 
             const init = "EDUFAIR";
             const y = "20";
-            const date = new Date();
+            const today = new Date();
 
-            const d = date.getDay();            
+            const d = String(today.getDate()).padStart(2, '0')                    
 
             let strCount = "" + (res+1);
             let digit = "0000";
@@ -160,6 +175,7 @@ export default function Index(){
             let sta = await SC.saveTiket(Data);                        
             (sta.data.status === true) ? console.log("Success Input") : console.log("Error in api save");
             swal("Great joobs!", "Your registration success to save.", "success");            
+            clearAll();
             socket.emit('getAll');            
             socket.emit('getCount');
         }

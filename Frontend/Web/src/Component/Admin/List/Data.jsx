@@ -21,7 +21,9 @@ export default function DataTable(){
 
     const atSearch = () => {           
         tempList.forEach((res)=>{
-            if(res.noreg.search(txtSearch) >= 0){                
+            let convertTxt = txtSearch.toLowerCase();
+            let convertRes = res.noreg.toLowerCase();
+            if(convertRes.search(convertTxt) >= 0){                
                 sercList.push(res);
             }                                    
         });                
