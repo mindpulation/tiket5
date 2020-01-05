@@ -23,11 +23,16 @@ class Tiket {
         return resultGetAllTiket;
     }
 
-    async findSpecificTiket(tiketCol){
+    async countAllTiket(tiketCol){
+        
+        let res = 0;
 
+        res = await tiketCol.countDocuments();        
 
+        return res;
 
     }
+    
 }
 
 module.exports = Tiket;

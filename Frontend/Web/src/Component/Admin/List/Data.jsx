@@ -19,20 +19,26 @@ export default function DataTable(){
         setPrimaryList(ListData);                
     },[ListData, setPrimaryList]);    
 
-    const atEnter = (e) => {
-        if(e.key === 'Enter'){
-            atSearch();
-        }
-    }
-
     const atSearch = () => {           
         tempList.forEach((res)=>{
-            if(res.noreg.search(txtSearch) >= 0){                
+            let convertTxt = txtSearch.toLowerCase();
+            let convertRes = res.noreg.toLowerCase();
+            if(convertRes.search(convertTxt) >= 0){                
                 sercList.push(res);
             }                                    
         });                
         setPrimaryList(sercList);
     }
+
+    useEffect(()=>{
+        atSearch();
+    },[txtSearch]); 
+
+    const atEnter = (e) => {
+        if(e.key === 'Enter'){
+            atSearch();
+        }
+    }    
 
     const atChoose = (param) => {        
         let found = 0;
@@ -76,13 +82,16 @@ export default function DataTable(){
                                     <div className="box" key={id}>                                
                                         <div className="group">
                                             <div className="txt-title">
-                                                <span>No Reg: {res.noreg}</span>
+                                                <span>{res.full_name}</span>
                                             </div>
                                             <div className="txt-data">
-                                                <span>Nama: {res.full_name}</span>
+                                                <span>No.Reg : <b>{res.noreg}</b></span>                                                
                                             </div>
+                                            <div className="txt-data">
+                                                <span>School : {`(${res.school}) ${res.vocation} ${res.class}`}</span>                                                
+                                            </div>                                            
                                             <div className="btn">
-                                                <button onClick={()=>atChoose(res)} ><i className="fa fa-print" aria-hidden="true"></i></button>
+                                                <button onClick={()=>atChoose(res)} ><i className="fa fa-save" aria-hidden="true"></i>Choose</button>
                                             </div>
                                         </div>
                                     </div>

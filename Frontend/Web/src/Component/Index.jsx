@@ -30,12 +30,52 @@ export default function Index(){
 
     const [txtSchool, seTxtSchool] = useState("");
     const [txtClass, seTxtClass] = useState(0);
-    const [txtJurusan, seTxtJurusan] = useState("");
+    const [txtJurusan, seTxtJurusan] = useState(0);
 
     const [txtHp, seTxtHp] = useState("");
     const [txtEmail, seTxtEmail] = useState("");
 
-    const [txtMsg, seTxtMsg] = useState("");    
+    const [txtMsg, seTxtMsg] = useState("");            
+
+    const clearAll = () => {
+        seTxtName('');
+        seTxtCallName('');
+        setOptionProv(0);
+        setOptionKec(0);
+        setOptionCity(0)
+        setOptionDesa(0);
+        seTxtSchool('');
+        seTxtClass(0);
+        seTxtJurusan(0);
+        seTxtHp("");
+        seTxtEmail("");
+        seTxtMsg("");
+    }
+
+    useEffect(()=>{        
+        const socket = io(endpoint);        
+        socket.emit("getCount");
+        socket.on("sendCount", res => {            
+
+            console.log(res);
+
+            const init = "EDUFAIR";
+            const y = "20";
+            const today = new Date();
+
+            const d = String(today.getDate()).padStart(2, '0')                    
+
+            let strCount = "" + (res+1);
+            let digit = "0000";
+
+            let hasilCount = digit.substring(0, digit.length - strCount.length) + strCount;
+
+            let hasil = `${init}-${y}-${d}-${hasilCount}`;            
+
+            seTxtRegis(hasil);
+
+        });                
+    },[seTxtRegis]);   
 
     useEffect(()=>{
         (async()=>{                        
@@ -134,8 +174,10 @@ export default function Index(){
             const socket = io(endpoint);
             let sta = await SC.saveTiket(Data);                        
             (sta.data.status === true) ? console.log("Success Input") : console.log("Error in api save");
-            socket.emit('getAll');            
             swal("Great joobs!", "Your registration success to save.", "success");            
+            clearAll();
+            socket.emit('getAll');            
+            socket.emit('getCount');
         }
         else{swal("Oopps!", "Complete before gooo..", "error")}
 
@@ -195,8 +237,8 @@ export default function Index(){
                                 <div className="txt-group">
                                     <span className="txt-captions">No registrasi</span>
                                 </div>
-                                <div className="input-group">
-                                    <input type="number" className="" value={txtRegis} onChange={(e)=>seTxtRegis(e.target.value)} />
+                                <div className="input-group">                                    
+                                    <input type="text" className="" value={txtRegis} readOnly/>
                                 </div>
                                 
                                 <div className="txt-group">

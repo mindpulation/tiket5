@@ -1,7 +1,42 @@
 /* Style at Print */
 
 @media print{    
-    
+    .BodAdmin .col1{
+        width: 100%;
+        float: left;
+    }
+    .BodAdmin .col2{
+        display: none;
+    }    
+    .BodAdmin .col3{
+        display: none;    
+    }
+    .BodView .box .row2{
+        display: none;
+    }
+    .BodView .box .row{
+        padding-bottom: 25px;
+    }
+    .BodView .box .row .col{
+        width: 50%;
+    }
+    .BodView .box .row .col .group2, .BodView .box .row .col .group{
+        display: block;
+    }
+    .BodView .box .row .col .group .txt-title, .BodView .box .row .col .group2 .txt-title{
+        display: none;
+    }    
+    .BodView .box .row .col .group, .BodView .box .row .col .group2{        
+        padding: 10px;
+    }
+    .BodView .box .row .col .group .join, .BodView .box .row .col .group2 .join{
+        border: 1.5px dashed dimgray;
+        border-radius: 5px;
+    }
+    .BodView .box .row .col .group .join .group-print, .BodView .box .row .col .group2 .join .group-print{
+        padding: 20px;
+        padding-top: 0px;
+    }
 }
 
 

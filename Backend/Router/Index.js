@@ -49,11 +49,8 @@ app.get('/get_all', async (req,res) => {
    res.send( await mdl.getAllTiket());
 });
 
-app.post('/get_specific', async (req,res) => {
-
-    let keyword = req.body.keyword;
-
-    res.send( await mdl.findSpecificTiket(keyword) );
-
+app.get('/get_count', async (req, res)=>{
+    res.send({result: await mdl.countTiket()})
 });
+
 module.exports = app;

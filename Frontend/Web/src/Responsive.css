@@ -9,3 +9,15 @@
         padding-left:0px;    
     }
 }
+
+@media screen and (max-width:900px){
+    .BodAdmin .col1{
+        width: 100%;
+    }
+    .BodAdmin .col2{
+        width: 100%;
+    }
+    .BodAdmin .col3{
+        width: 100%;
+    }
+}

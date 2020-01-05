@@ -23,13 +23,21 @@ const getAPI = async () => {
     io.emit("sendAll", res);
 }
 
+const getMany = async () => {    
+    let res = await mdl.countTiket();    
+    io.emit("sendCount", res);
+}
+
 io.on('connection', (soc)=>{
 
     console.log('(+) New user connected');    
 
-    soc.on('getAll', async ()=>{
-        console.log('Hello');
+    soc.on('getAll', async ()=>{        
         await getAPI();        
+    });
+
+    soc.on('getCount', async () => {
+       await getMany(); 
     });
 
     soc.on('disconnect', ()=>{ console.log('(-) One user disconnect') });
