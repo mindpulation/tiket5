@@ -35,17 +35,32 @@ export default function Index(){
     const [txtHp, seTxtHp] = useState("");
     const [txtEmail, seTxtEmail] = useState("");
 
-    const [txtMsg, seTxtMsg] = useState("");    
+    const [txtMsg, seTxtMsg] = useState("");            
 
-    const createNoRegis = () => {
-        const init = "EDUFAIR";
-        const y = "20";
-        const date = new Date();
+    useEffect(()=>{        
+        const socket = io(endpoint);        
+        socket.emit("getCount");
+        socket.on("sendCount", res => {            
 
-        const d = date.getDay();
+            console.log(res);
 
-        
-    }
+            const init = "EDUFAIR";
+            const y = "20";
+            const date = new Date();
+
+            const d = date.getDay();            
+
+            let strCount = "" + (res+1);
+            let digit = "0000";
+
+            let hasilCount = digit.substring(0, digit.length - strCount.length) + strCount;
+
+            let hasil = `${init}-${y}-${d}-${hasilCount}`;            
+
+            seTxtRegis(hasil);
+
+        });                
+    },[seTxtRegis]);   
 
     useEffect(()=>{
         (async()=>{                        
@@ -144,8 +159,9 @@ export default function Index(){
             const socket = io(endpoint);
             let sta = await SC.saveTiket(Data);                        
             (sta.data.status === true) ? console.log("Success Input") : console.log("Error in api save");
-            socket.emit('getAll');            
             swal("Great joobs!", "Your registration success to save.", "success");            
+            socket.emit('getAll');            
+            socket.emit('getCount');
         }
         else{swal("Oopps!", "Complete before gooo..", "error")}
 
