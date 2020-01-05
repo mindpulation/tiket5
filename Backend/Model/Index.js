@@ -14,7 +14,7 @@ class Mongo{
         this.startDB(url);
     }
 
-     startDB(url){
+    startDB(url){
         dbs.connect(url, {useNewUrlParser: true, useUnifiedTopology: true}, async (err, con) => {
              if (!err) {
                  
@@ -42,9 +42,10 @@ class Mongo{
         return Tiket.getAllTiket(this.tiket);
     }
 
-    findSpecificTiket(){
-        return Tiket.findSpecifiTiket(this.tiket);
+    countTiket(){        
+        return Tiket.countAllTiket(this.tiket);
     }
+   
 }
 
 module.exports = Mongo;

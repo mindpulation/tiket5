@@ -37,6 +37,16 @@ export default function Index(){
 
     const [txtMsg, seTxtMsg] = useState("");    
 
+    const createNoRegis = () => {
+        const init = "EDUFAIR";
+        const y = "20";
+        const date = new Date();
+
+        const d = date.getDay();
+
+        
+    }
+
     useEffect(()=>{
         (async()=>{                        
             let prv = await AC.getProv();                           
@@ -195,8 +205,8 @@ export default function Index(){
                                 <div className="txt-group">
                                     <span className="txt-captions">No registrasi</span>
                                 </div>
-                                <div className="input-group">
-                                    <input type="number" className="" value={txtRegis} onChange={(e)=>seTxtRegis(e.target.value)} />
+                                <div className="input-group">                                    
+                                    <input type="text" className="" value={txtRegis} readOnly/>
                                 </div>
                                 
                                 <div className="txt-group">
