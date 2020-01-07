@@ -53,4 +53,12 @@ app.get('/get_count', async (req, res)=>{
     res.send({result: await mdl.countTiket()})
 });
 
+app.post('/check_noreg', async (req,res) => {
+
+    let noreg = req.body.noreg;
+    console.log(noreg);
+    res.send ( await mdl.checkNoreg(noreg) );
+
+});
+
 module.exports = app;
