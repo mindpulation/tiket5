@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="328ba0af-86ff-4e42-9734-3dcfcbf097f4" name="Default Changelist" comment="Change Endpoint PORT">
-      <change afterPath="$PROJECT_DIR$/Backend/Model/Realtime/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Model/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Model/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Model/Tiket/Tiket.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Model/Tiket/Tiket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/Router/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Router/Index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +64,8 @@
       <workItem from="1577981465095" duration="1561000" />
       <workItem from="1577983057734" duration="31000" />
       <workItem from="1578039947172" duration="199000" />
+      <workItem from="1578321942046" duration="1188000" />
+      <workItem from="1578405994187" duration="850000" />
     </task>
     <task id="LOCAL-00001" summary="Change Endpoint PORT">
       <created>1577806584262</created>
