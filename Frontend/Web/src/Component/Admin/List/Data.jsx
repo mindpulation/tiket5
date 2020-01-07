@@ -28,11 +28,7 @@ export default function DataTable(){
             }                                    
         });                
         setPrimaryList(sercList);
-    }
-
-    useEffect(()=>{
-        atSearch();
-    },[txtSearch]); 
+    }    
 
     const atEnter = (e) => {
         if(e.key === 'Enter'){
