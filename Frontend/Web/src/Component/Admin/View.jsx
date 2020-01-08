@@ -3,13 +3,15 @@ import React, { useContext, useState} from 'react';
 import {PrintList} from '../../Global/Store';
 import GetController from '../../Controller/Get';
 
+import {JsonToExcel} from 'react-json-excel';
 import QrReader from 'react-qr-scanner';
 import swal from 'sweetalert';
 
 export default function View(){
 
-    const [ListPrint] = useContext(PrintList);
-    const [GC] = useState(new GetController());    
+    const [ListPrint] = useContext(PrintList);    
+
+    const [GC] = useState(new GetController());        
 
     const onScan = async (res) => {
         if(res !== null){
@@ -33,6 +35,24 @@ export default function View(){
         width: "100%",
         borderRadius: "5px",
     };
+    
+    const dataExcel =JSON.parse( localStorage.getItem('dataExcel'));            
+
+    const fields = {
+        "noreg": "No Registrasi",
+        "full_name": "Nama Lengkap" ,
+        "nick_name": "Nama Panggilan",
+        "address": "Alamat",
+        "school": "Asal Sekolah",
+        "class": "Kelas",
+        "vocation": "Jurusan",
+        "phone_number": "No Handphone",
+        "email": "Email",
+        "know_from": "_",
+        "feedback": "Feedback",                
+    };
+
+
 
     return(
         <div className="BodView">
@@ -111,6 +131,11 @@ export default function View(){
                         </div>                                        
                     </div>
                 </div>
+
+                <div className="row3">                    
+                    <JsonToExcel className="btn-convert" data={dataExcel} filename={"Report-file"} fields={fields} facingMode={"rear"}/>                    
+                </div>
+
             </div>
         </div>
     );
