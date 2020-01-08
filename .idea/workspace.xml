@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="328ba0af-86ff-4e42-9734-3dcfcbf097f4" name="Default Changelist" comment="Change Endpoint PORT">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Model/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Model/Index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Model/Tiket/Tiket.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Model/Tiket/Tiket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Router/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Router/Index.js" afterDir="false" />
-    </list>
+    <list default="true" id="328ba0af-86ff-4e42-9734-3dcfcbf097f4" name="Default Changelist" comment="Change Endpoint PORT" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
