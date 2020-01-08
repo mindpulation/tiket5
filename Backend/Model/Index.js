@@ -45,7 +45,11 @@ class Mongo{
     countTiket(){        
         return Tiket.countAllTiket(this.tiket);
     }
-   
+
+   checkNoreg(noreg){
+        return Tiket.compareNoreg(this.tiket, noreg)
+   }
+
 }
 
 module.exports = Mongo;

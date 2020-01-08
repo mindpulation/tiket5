@@ -32,7 +32,19 @@ class Tiket {
         return res;
 
     }
-    
+
+    async compareNoreg(tiketCol, noreg){
+
+        let statusCheckNoreg, checkNoreg;
+        checkNoreg = await tiketCol.find( { noreg : noreg } ).toArray();
+
+        if(checkNoreg.length === 0 ? statusCheckNoreg = { result : false } : statusCheckNoreg = { result : true });
+
+        console.log(checkNoreg, statusCheckNoreg);
+        return statusCheckNoreg;
+
+    }
+
 }
 
 module.exports = Tiket;

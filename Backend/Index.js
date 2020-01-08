@@ -28,9 +28,7 @@ const getMany = async () => {
     io.emit("sendCount", res);
 }
 
-io.on('connection', (soc)=>{
-
-    console.log('(+) New user connected');    
+io.on('connection', (soc)=>{    
 
     soc.on('getAll', async ()=>{        
         await getAPI();        
@@ -39,8 +37,7 @@ io.on('connection', (soc)=>{
     soc.on('getCount', async () => {
        await getMany(); 
     });
-
-    soc.on('disconnect', ()=>{ console.log('(-) One user disconnect') });
+    
 });
 
 server.listen(2020, async (err) => {
