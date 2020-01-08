@@ -13,7 +13,7 @@ import Genqr from '../Modal/Genqr';
 export default function Index(){            
 
     // const endpoint = "http://88.99.38.173:2020/";        
-    const endpoint = "http://localhost:2020/";        
+    const endpoint = "http://138.201.173.65:2020/";        
 
     const [AC] = useState(new AlamatController());
     const [SC] = useState(new SaveController());
