@@ -12,7 +12,7 @@ const sio = require('socket.io');
 const io = sio(server);
 
 const model = require('./Model/Index');
-const mdl = new model("mongodb://127.0.0.1:27017/tiket5");
+const mdl = new model("mongodb://138.201.173.65:27017/tiket5");
 
 app.use(Express.static(__dirname));
 app.use('/', Admin);
