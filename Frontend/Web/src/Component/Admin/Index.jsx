@@ -14,16 +14,17 @@ export default function IndexAdmin(){
     // const endpoint = "http://88.99.38.173:2020/";    
     const endpoint = "http://138.201.173.65:2020/";    
 
-    const [,setListData] = useContext(DataList);
+    const [,setListData] = useContext(DataList);    
 
     const [GC] = useState(new GetController());
-
+    
     useEffect(()=>{
         (async()=>{
             let res = await GC.getData();            
-            setListData(res.data.result);
+            await setListData(res.data.result);                      
+            localStorage.setItem("dataExcel",JSON.stringify(res.data.result));
         })();
-    },[GC, setListData]);
+    },[GC, setListData]);    
 
     useEffect(()=>{        
         const socket = io(endpoint);        
@@ -33,7 +34,9 @@ export default function IndexAdmin(){
     return(
         <div className="BodAdmin">
             <div className="col1">
-                <View/>                            
+                <div className="Parent">
+                    <View/>
+                </div>
             </div>
             <div className="col2">
                 <IndexList/>                
